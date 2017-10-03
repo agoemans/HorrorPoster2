@@ -1,10 +1,38 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import { OnInit } from '@angular/core';
+
+import { MovieDetailComponent } from './movie-detail.component';
+import { Movie } from './movie';
+
+import { MovieService } from './movie.service';
+//this has to be above @Component
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [MovieService]
 })
-export class AppComponent {
-  title = 'app';
+
+export class AppComponent implements  OnInit{
+  title = 'Horror Movie Poster';
+  movies = [];
+  selectedMovie = Movie;
+
+  constructor(private movieService: MovieService) { }
+
+  ngOnInit(): void {
+    this.getMovies();
+  }
+
+  getMovies(): void {
+    this.movieService.getMovies().then( (movies: Movie[]) => this.movies = movies);
+
+  }
+
+  onGetMovie(): void {
+    let random: number = (Math.random() * (this.movies.length - 0) + 0);
+    this.selectedMovie =  this.movies[Math.floor(random)];
+    console.log(this.selectedMovie);
+  };
 }

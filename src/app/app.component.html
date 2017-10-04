@@ -1,19 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <h1>
+  <h1 class="mainTitle">
     {{title}}
   </h1>
 </div>
 
-<div>
-  <button (click)="onGetMovie()"> Get me a movie!</button>
+<div class="btnStyle" (click)="onGetMovie()">Get me a movie!
 </div>
+<hr>
 <div>
   <div *ngIf="selectedMovie">
     <div>
       <h2>{{this.selectedMovie.mainStar}} </h2>
+    </div>
+    <div class="posterImg"></div>
+    <div class="posterBody">
       <h5>{{this.selectedMovie.tagLine}}</h5>
       <h1 class="movieTitle">{{this.selectedMovie.title}}</h1>
+      <h3 class="coStar">{{this.selectedMovie.coStar}} </h3>
       <h3>{{this.selectedMovie.year}} </h3>
     </div>
   </div>

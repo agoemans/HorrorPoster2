@@ -14,7 +14,7 @@ import { MovieService } from './movie.service';
   providers: [MovieService]
 })
 
-export class AppComponent implements  OnInit{
+export class AppComponent implements OnInit{
   title = 'Horror Movie Poster';
   movies = [];
   selectedMovie = Movie;
@@ -26,7 +26,10 @@ export class AppComponent implements  OnInit{
   }
 
   getMovies(): void {
-    this.movieService.getMovies().then( (movies: Movie[]) => this.movies = movies);
+    this.movieService.getMovies().then( (movies: Movie[]) => {
+      this.movies = movies;
+      this.onGetMovie();
+    });
 
   }
 

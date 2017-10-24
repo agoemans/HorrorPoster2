@@ -67,10 +67,11 @@ hr.style-eight:after {
 
 .posterBody {
   font-family: 'Roboto Condensed', sans-serif;
-  position: fixed;
+  position: relative;
   bottom: 10px;
   text-align: center;
   width: 100%;
+  padding-top:40px;
 }
 
 .coStar {

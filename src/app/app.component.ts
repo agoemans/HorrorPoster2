@@ -16,7 +16,7 @@ import { MovieService } from './movie.service';
 
 export class AppComponent implements OnInit{
   title = 'Horror Movie Poster';
-  movies = [];
+  movies: Movie[] = [];
   selectedMovie = Movie;
 
   constructor(private movieService: MovieService) { }
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit{
 
   onGetMovie(): void {
     let random: number = (Math.random() * (this.movies.length - 0) + 0);
-    this.selectedMovie =  this.movies[Math.floor(random)];
+    this.selectedMovie =  <any>this.movies[Math.floor(random)];
     console.log(this.selectedMovie);
   };
 }

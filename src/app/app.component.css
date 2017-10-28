@@ -77,7 +77,7 @@ hr.style-eight:after {
 .coStar {
   font-family: 'Open Sans Condensed', sans-serif;
   font-variant: all-small-caps;
-  font-size: 20px;
+  font-size: 26px;
   font-stretch: ultra-condensed;
   margin: 0;
 }
@@ -91,7 +91,7 @@ hr.style-eight:after {
   margin: auto;;
 }
 
-.btnStyle{
+.btnStyle {
   width: 200px;
   padding: 10px 15px;
   margin: 20px auto;

@@ -36,6 +36,5 @@ export class AppComponent implements OnInit{
   onGetMovie(): void {
     let random: number = (Math.random() * (this.movies.length - 0) + 0);
     this.selectedMovie =  <any>this.movies[Math.floor(random)];
-    console.log(this.selectedMovie);
   };
 }

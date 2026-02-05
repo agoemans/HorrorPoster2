@@ -1,8 +1,6 @@
-import { Movie } from './movie';
+import type { Movie } from '../types/movie';
 
 export const MOVIES: Movie[] = [
-  //title, date, dir, main star, co star, writer, rating, release date
-
   {
     title: 'The Exorcist',
     year: '1973',
@@ -16,7 +14,7 @@ export const MOVIES: Movie[] = [
     year: '1980',
     director: 'Stanley Kubrick',
     mainStar: 'Jack Nicholson',
-    coStar: 'Shelley Duvall, Danny Lloyd, Scatman Crothers, 	Barry Nelson, Philip Stone',
+    coStar: 'Shelley Duvall, Danny Lloyd, Scatman Crothers, Barry Nelson, Philip Stone',
     tagLine: 'He came as the caretaker, but this hotel had its own guardians - who had been there a long time'
   },
   {

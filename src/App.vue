@@ -1,7 +1,47 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Paytone+One|Roboto|Roboto+Condensed');
-h1 {
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import type { Movie } from './types/movie';
+import { MOVIES } from './data/movies';
 
-}
+const title = 'Horror Movie Poster';
+const movies = ref<Movie[]>([]);
+const selectedMovie = ref<Movie | null>(null);
+
+const getRandomMovie = (): void => {
+  if (movies.value.length === 0) return;
+  const randomIndex = Math.floor(Math.random() * movies.value.length);
+  selectedMovie.value = movies.value[randomIndex] ?? null;
+};
+
+onMounted(() => {
+  movies.value = MOVIES;
+  getRandomMovie();
+});
+</script>
+
+<template>
+  <div>
+    <h1 class="mainTitle">{{ title }}</h1>
+  </div>
+
+  <div class="btnStyle" @click="getRandomMovie">Get me a movie!</div>
+  <hr>
+  <div v-if="selectedMovie">
+    <div>
+      <h2>{{ selectedMovie.mainStar }}</h2>
+    </div>
+    <div class="posterImg"></div>
+    <div class="posterBody">
+      <h5>{{ selectedMovie.tagLine }}</h5>
+      <h1 class="movieTitle">{{ selectedMovie.title }}</h1>
+      <h3 class="coStar">{{ selectedMovie.coStar }}</h3>
+      <h3>{{ selectedMovie.year }}</h3>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Paytone+One|Roboto|Roboto+Condensed');
 
 h2 {
   font-family: 'Roboto', sans-serif;
@@ -9,7 +49,6 @@ h2 {
   font-size: 40px;
   font-stretch: semi-condensed;
   letter-spacing: 10px;
-  /*margin: auto;*/
 }
 
 h4 {
@@ -28,12 +67,10 @@ h5 {
 
 div {
   text-align: center;
-  /*margin: auto;*/
 }
 
-
 hr.style-eight {
-  overflow: visible; /* For IE */
+  overflow: visible;
   padding: 0;
   border: none;
   border-top: medium double #333;
@@ -71,7 +108,7 @@ hr.style-eight:after {
   bottom: 10px;
   text-align: center;
   width: 100%;
-  padding-top:40px;
+  padding-top: 40px;
 }
 
 .coStar {
@@ -83,12 +120,12 @@ hr.style-eight:after {
 }
 
 .posterImg {
-  background: url(http://lorempixel.com/400/400/cats/) no-repeat left center;
+  background: url(https://placecats.com/400/400) no-repeat left center;
   padding: 5px 0 5px 25px;
   height: 400px;
   width: 400px;
   position: relative;
-  margin: auto;;
+  margin: auto;
 }
 
 .btnStyle {
@@ -105,3 +142,4 @@ hr.style-eight:after {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
 }
+</style>

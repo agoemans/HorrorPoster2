@@ -43,9 +43,6 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Paytone+One|Roboto|Roboto+Condensed');
 
-h1 {
-}
-
 h2 {
   font-family: 'Roboto', sans-serif;
   font-variant: all-small-caps;

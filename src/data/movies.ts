@@ -64,5 +64,85 @@ export const MOVIES: Movie[] = [
     mainStar: 'Marilyn Burns',
     coStar: 'Marilyn Burns, Edwin Neal, Allen Danziger, Paul A. Partain',
     tagLine: 'Who will survive and what will be left of them?'
+  },
+  {
+    title: 'A Nightmare on Elm Street',
+    year: '1984',
+    director: 'Wes Craven',
+    mainStar: 'Heather Langenkamp',
+    coStar: 'Robert Englund, Johnny Depp, John Saxon, Ronee Blakley',
+    tagLine: 'If Nancy doesn\'t wake up screaming, she won\'t wake up at all'
+  },
+  {
+    title: 'Alien',
+    year: '1979',
+    director: 'Ridley Scott',
+    mainStar: 'Sigourney Weaver',
+    coStar: 'Tom Skerritt, John Hurt, Veronica Cartwright, Harry Dean Stanton',
+    tagLine: 'In space no one can hear you scream'
+  },
+  {
+    title: 'The Omen',
+    year: '1976',
+    director: 'Richard Donner',
+    mainStar: 'Gregory Peck',
+    coStar: 'Lee Remick, David Warner, Billie Whitelaw, Harvey Stephens',
+    tagLine: 'Good morning. You are one day closer to the end of the world'
+  },
+  {
+    title: 'Rosemary\'s Baby',
+    year: '1968',
+    director: 'Roman Polanski',
+    mainStar: 'Mia Farrow',
+    coStar: 'John Cassavetes, Ruth Gordon, Sidney Blackmer, Maurice Evans',
+    tagLine: 'Pray for Rosemary\'s Baby'
+  },
+  {
+    title: 'Psycho',
+    year: '1960',
+    director: 'Alfred Hitchcock',
+    mainStar: 'Anthony Perkins',
+    coStar: 'Janet Leigh, Vera Miles, John Gavin, Martin Balsam',
+    tagLine: 'A boy\'s best friend is his mother'
+  },
+  {
+    title: 'The Fly',
+    year: '1986',
+    director: 'David Cronenberg',
+    mainStar: 'Jeff Goldblum',
+    coStar: 'Geena Davis, John Getz, Joy Boushel, Les Carlson',
+    tagLine: 'Be afraid. Be very afraid'
+  },
+  {
+    title: 'Poltergeist',
+    year: '1982',
+    director: 'Tobe Hooper',
+    mainStar: 'JoBeth Williams',
+    coStar: 'Craig T. Nelson, Heather O\'Rourke, Beatrice Straight, Dominique Dunne',
+    tagLine: 'They\'re here'
+  },
+  {
+    title: 'The Witch',
+    year: '2015',
+    director: 'Robert Eggers',
+    mainStar: 'Anya Taylor-Joy',
+    coStar: 'Ralph Ineson, Kate Dickie, Harvey Scrimshaw, Ellie Grainger',
+    tagLine: 'Evil takes many forms'
+  },
+  {
+    title: 'Hereditary',
+    year: '2018',
+    director: 'Ari Aster',
+    mainStar: 'Toni Collette',
+    coStar: 'Alex Wolff, Milly Shapiro, Ann Dowd, Gabriel Byrne',
+    tagLine: 'Every family tree hides a secret'
+  },
+  {
+    title: 'The Conjuring',
+    year: '2013',
+    director: 'James Wan',
+    mainStar: 'Vera Farmiga',
+    coStar: 'Patrick Wilson, Lili Taylor, Ron Livingston, Shanley Caswell',
+    tagLine: 'Based on the true case files of the Warrens'
   }
 ];

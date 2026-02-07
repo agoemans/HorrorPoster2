@@ -39,11 +39,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <h1 class="mainTitle">{{ title }}</h1>
+  <div class="header">
+    <div class="btnStyle" @click="getRandomMovie">Get me a movie!</div>
   </div>
-
-  <div class="btnStyle" @click="getRandomMovie">Get me a movie!</div>
   <hr>
   
   <!-- Format 1: The Omen - Minimal Symbol Horror -->
@@ -103,6 +101,12 @@ onMounted(() => {
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Paytone+One|Roboto|Roboto+Condensed|Cinzel|Creepster');
 
 /* Common styles */
+.header {
+  background: #000;
+  padding: 15px 0;
+  text-align: center;
+}
+
 div {
   text-align: center;
 }
@@ -114,38 +118,45 @@ hr {
   border-top: medium double #333;
   color: #333;
   text-align: center;
-}
-
-.mainTitle {
-  font-family: 'Paytone One', sans-serif;
-  font-size: 30px;
-  letter-spacing: 10px;
+  margin: 0;
 }
 
 .btnStyle {
   width: 200px;
-  padding: 10px 15px;
-  margin: 20px auto;
-  color: #FFFDFD;
-  background-color: #555;
+  padding: 12px 20px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #cc0000;
   border: 0 none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btnStyle:hover {
+  background-color: #ff0000;
 }
 
 /* Format 1: The Omen - Minimal Symbol Horror */
 .poster-omen {
   background: linear-gradient(135deg, #1a0000 0%, #000000 100%);
-  min-height: 600px;
-  padding: 60px 40px;
+  height: calc(100vh - 60px);
+  padding: 40px;
   position: relative;
-  max-width: 500px;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   filter: contrast(1.1);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .poster-omen::before {
@@ -163,15 +174,15 @@ hr {
 }
 
 .omen-symbol {
-  font-size: 120px;
-  margin: 40px 0;
+  font-size: 100px;
+  margin: 20px 0;
   opacity: 0.85;
   color: #8b0000;
   text-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
 }
 
 .omen-content {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .omen-tagline {
@@ -219,10 +230,12 @@ hr {
 /* Format 2: The Face - Character-Centric Terror */
 .poster-face {
   position: relative;
-  max-width: 500px;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-  height: 700px;
+  height: calc(100vh - 60px);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .face-image {
@@ -310,32 +323,38 @@ hr {
 /* Format 3: The Corridor - Environmental Horror */
 .poster-corridor {
   background: linear-gradient(to bottom, #2c3e50 0%, #1a1a1a 100%);
-  min-height: 700px;
-  padding: 40px;
+  height: calc(100vh - 60px);
+  padding: 30px;
   position: relative;
-  max-width: 500px;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   box-shadow: inset 0 0 100px rgba(0,0,0,0.7);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .corridor-image {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 350px;
+  height: 280px;
   width: 100%;
-  margin: 20px 0;
+  margin: 15px 0;
   filter: grayscale(80%) brightness(0.6);
   box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .corridor-title {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 70px;
+  font-size: 55px;
   color: #f0f0f0;
-  margin: 30px 0 20px 0;
+  margin: 20px 0 15px 0;
   text-transform: uppercase;
-  letter-spacing: 15px;
+  letter-spacing: 12px;
   font-weight: 700;
   text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
 }
@@ -375,25 +394,29 @@ hr {
 /* Format 4: The Chaos - Aggressive Modern Horror */
 .poster-chaos {
   background: #000;
-  min-height: 700px;
-  padding: 30px;
+  height: calc(100vh - 60px);
+  padding: 25px;
   position: relative;
-  max-width: 500px;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .chaos-image {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 400px;
+  height: 320px;
   width: 110%;
   margin: 0 -5%;
   transform: rotate(-1deg) skew(-1deg);
   filter: hue-rotate(320deg) saturate(2) contrast(1.4);
   box-shadow: 0 0 50px rgba(255,0,0,0.5);
-  animation: glitch 3s infinite;
 }
 
 @keyframes glitch {
@@ -410,11 +433,11 @@ hr {
 
 .chaos-title {
   font-family: 'Impact', sans-serif;
-  font-size: 65px;
+  font-size: 55px;
   color: #ff0000;
-  margin: 30px 0;
+  margin: 20px 0;
   text-transform: uppercase;
-  letter-spacing: 8px;
+  letter-spacing: 6px;
   transform: rotate(-2deg);
   text-shadow: 3px 3px 0 #000, -3px -3px 0 #fff, 3px -3px 0 #000, -3px 3px 0 #fff;
   filter: contrast(2);
@@ -471,5 +494,148 @@ hr {
   letter-spacing: 5px;
   color: #ff0000;
   font-weight: bold;
+}
+
+/* Responsive Design - Mobile and Tablet */
+@media (max-width: 768px) {
+  .poster-omen,
+  .poster-face,
+  .poster-corridor,
+  .poster-chaos {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .poster-omen {
+    padding: 40px 20px;
+    min-height: 500px;
+  }
+
+  .omen-symbol {
+    font-size: 80px;
+    margin: 20px 0;
+  }
+
+  .omen-title {
+    font-size: 40px;
+    letter-spacing: 10px;
+  }
+
+  .omen-tagline {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .poster-face {
+    height: 600px;
+  }
+
+  .face-overlay {
+    padding: 30px 20px;
+  }
+
+  .face-star {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .face-title {
+    font-size: 50px;
+  }
+
+  .face-tagline {
+    font-size: 14px;
+  }
+
+  .poster-corridor {
+    padding: 30px 20px;
+    min-height: 600px;
+  }
+
+  .corridor-image {
+    height: 250px;
+  }
+
+  .corridor-title {
+    font-size: 45px;
+    letter-spacing: 8px;
+  }
+
+  .corridor-tagline {
+    font-size: 14px;
+  }
+
+  .corridor-credits {
+    letter-spacing: 4px;
+    font-size: 10px;
+  }
+
+  .poster-chaos {
+    padding: 20px;
+    min-height: 600px;
+  }
+
+  .chaos-image {
+    height: 300px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .chaos-title {
+    font-size: 45px;
+    letter-spacing: 4px;
+  }
+
+  .chaos-tagline {
+    font-size: 12px;
+  }
+
+  .chaos-star {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .omen-title {
+    font-size: 32px;
+    letter-spacing: 6px;
+  }
+
+  .omen-symbol {
+    font-size: 60px;
+  }
+
+  .face-title {
+    font-size: 40px;
+  }
+
+  .face-star {
+    font-size: 18px;
+  }
+
+  .corridor-title {
+    font-size: 35px;
+    letter-spacing: 5px;
+  }
+
+  .corridor-image {
+    height: 200px;
+  }
+
+  .chaos-title {
+    font-size: 35px;
+    letter-spacing: 3px;
+  }
+
+  .chaos-image {
+    height: 250px;
+  }
+
+  .btnStyle {
+    width: 160px;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
 }
 </style>
